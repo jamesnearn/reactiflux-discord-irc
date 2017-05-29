@@ -1,0 +1,29 @@
+[
+  {
+    "nickname": "<IRC-NICK>",
+    "server": "chat.freenode.net",
+    "discordToken": "<DISCORD-TOKEN>",
+    "autoSendCommands": [
+      ["PRIVMSG", "NickServ", "IDENTIFY <IRC-PASSWORD>"]
+    ],
+    "channelMapping": {
+      "#discordchannel": "#ircchannel"
+    },
+    "ircOptions": {
+      "port": 6667,
+      "debug": true,
+      "showErrors": true,
+      "floodProtection": true,
+      "floodProtectionDelay": 500
+    },
+    "format": {
+      "commandPrelude": "Command sent by {$nickname}",
+      "ircText": "<{$displayUsername}> {$text}",
+      "urlAttachment": "<{$displayUsername}> {$attachmentURL}",
+      "discord": "**<{$author}>** {$withMentions}"
+    },
+    "ircNickColor": false,
+    "commandCharacters": ["!", "."],
+    "ircStatusNotices": false
+  }
+]
