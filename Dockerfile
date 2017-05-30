@@ -1,5 +1,6 @@
 FROM node:7-alpine
 MAINTAINER 3stadt <docker@3stadt.com>
+ENV REFRESHED_AT 2017-05-30_00
 
 RUN apk update && apk upgrade \
     && apk add --no-cache git openssh \
