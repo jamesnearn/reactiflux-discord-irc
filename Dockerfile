@@ -12,6 +12,7 @@ USER discordirc
 WORKDIR /home/discordirc/app
 RUN git clone https://github.com/reactiflux/discord-irc.git . \
     && git checkout tags/2.3.0 \
+    && git branch -D master \
     && npm install && npm run build \
     && mkdir /home/discordirc/config
 
