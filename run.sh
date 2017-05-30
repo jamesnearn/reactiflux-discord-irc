@@ -1,5 +1,5 @@
-docker build -t 3stadt/sw-irc-discord . && docker run -it \
+docker build -t 3stadt/reactiflux-discord-irc . && docker run -itd \
     -v `pwd`/config:/home/discordirc/config \
-    --name sw-irc-discord \
+    --name reactiflux-discord-irc \
     --rm \
-    3stadt/sw-irc-discord
+    3stadt/reactiflux-discord-irc
