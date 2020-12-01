@@ -1,6 +1,6 @@
-FROM node:7-alpine
+FROM node:alpine
 LABEL author="3stadt <docker@3stadt.com>"
-ENV REFRESHED_AT 2018-12-23_02
+ENV REFRESHED_AT 2020-12-01_01
 
 RUN apk update && apk upgrade \
     && apk add --no-cache git openssh \
@@ -10,7 +10,7 @@ RUN apk update && apk upgrade \
     && chown -R discordirc:discordirc /home/discordirc
 USER discordirc
 WORKDIR /home/discordirc/app
-RUN git clone -b 'v2.6.2' \
+RUN git clone -b 'v2.9.0' \
     --single-branch --depth 1 https://github.com/reactiflux/discord-irc.git . \
     && npm install && npm run build \
     && mkdir /home/discordirc/config
